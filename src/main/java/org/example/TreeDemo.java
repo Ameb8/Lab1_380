@@ -62,14 +62,25 @@ class BinarySearchTree{
     Prints the value of every node preorder
     */
     public void preOrderTraversal(Node root){
-        System.out.println(root.value);
+        StringBuilder values = new StringBuilder();
+        traversePreOrder(values, root);
+
+        if(values.length() >= 2) //remove trailing ", "
+            values.setLength(values.length() - 2);
+
+        System.out.print(values.toString());
+    }
+
+
+
+    private void traversePreOrder(StringBuilder sb, Node root) {
+        sb.append(root.value + ", ");
 
         if(root.left != null)
-            postOrderTraversal(root.left);
+            traversePreOrder(sb, root.left);
 
         if(root.right != null)
-            postOrderTraversal(root.right);
-
+            traversePreOrder(sb, root.right);
     }
 
 
@@ -78,13 +89,25 @@ class BinarySearchTree{
     in-order traversal
     */
     public void inOrderTraversal(Node root){
-        if(root.left != null)
-            postOrderTraversal(root.left);
+        StringBuilder values = new StringBuilder();
+        traverseInOrder(values, root);
 
-        System.out.println(root.value);
+        if(values.length() >= 2) //remove trailing ", "
+            values.setLength(values.length() - 2);
+
+        System.out.print(values.toString());
+    }
+
+
+
+    private void traverseInOrder(StringBuilder sb, Node root) {
+        if(root.left != null)
+            traverseInOrder(sb, root.left);
+
+        sb.append(root.value + ", ");
 
         if(root.right != null)
-            postOrderTraversal(root.right);
+            traverseInOrder(sb, root.right);
     }
 
 
@@ -94,13 +117,25 @@ class BinarySearchTree{
 	   */
 
     public void postOrderTraversal(Node root){
+        StringBuilder values = new StringBuilder();
+        traversePostOrder(values, root);
+
+        if(values.length() >= 2) //remove trailing ", "
+            values.setLength(values.length() - 2);
+
+        System.out.print(values.toString());
+    }
+
+
+
+    private void traversePostOrder(StringBuilder sb, Node root) {
         if(root.left != null)
-            postOrderTraversal(root.left);
+            traversePostOrder(sb, root.left);
 
         if(root.right != null)
-            postOrderTraversal(root.right);
+            traversePostOrder(sb, root.right);
 
-        System.out.println(root.value);
+        sb.append(root.value + ", ");
     }
 
 
