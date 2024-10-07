@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef0de540-c3e2-497c-bb35-449fc09c1ddb" name="Changes" comment="typos fixed">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/TreeDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/TreeDemo.java" afterDir="false" />
-    </list>
+    <list default="true" id="ef0de540-c3e2-497c-bb35-449fc09c1ddb" name="Changes" comment="typos fixed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

@@ -6,6 +6,11 @@ class Node{
     int value;
     Node left, right;
 
+    /**
+     * Node constructor
+     *
+     * @param value of new node
+     */
     public Node(int value){
         this.value = value;
         left = null;
@@ -19,12 +24,11 @@ class BinarySearchTree{
     Node root;
 
 
-    /*
-    recursive insert method
-    */
-        /*
-	   inserts a node into the tree
-	   */
+    /**
+     * recursively calls itself to find correct insert location
+     *
+     * @param value of new node
+     */
     public void insert(int value){
         //tree is empty
         if(root == null){
@@ -56,10 +60,14 @@ class BinarySearchTree{
         }//closing main if-else
     }
 
-    /*
-    pre-order traversal
-    Prints the value of every node preorder
-    */
+
+
+    /**
+     * pre-order traversal
+     * prints the value of every node preorder
+     *
+     * @param root node of tree
+     */
     public void preOrderTraversal(Node root){
         StringBuilder values = new StringBuilder();
         traversePreOrder(values, root);
@@ -71,9 +79,13 @@ class BinarySearchTree{
     }
 
 
-    /*
-    adds node values to stringbuilder object in preorder
-    */
+
+    /**
+     * adds node values to stringbuilder object in preorder
+     *
+     * @param sb to hold node values
+     * @param root current node
+     */
     private void traversePreOrder(StringBuilder sb, Node root) {
         sb.append(root.value + ", ");
 
@@ -86,9 +98,12 @@ class BinarySearchTree{
 
 
 
-    /*
-    in-order traversal
-    */
+    /**
+     * pre-order traversal
+     * prints the value of every node preorder
+     *
+     * @param root node of tree
+     */
     public void inOrderTraversal(Node root){
         StringBuilder values = new StringBuilder();
         traverseInOrder(values, root);
@@ -100,9 +115,13 @@ class BinarySearchTree{
     }
 
 
-    /*
-    adds node values to stringbuilder object in inorder
-    */
+
+    /**
+     * adds node values to stringbuilder object in inorder
+     *
+     * @param sb to hold node values
+     * @param root current node
+     */
     private void traverseInOrder(StringBuilder sb, Node root) {
         if(root.left != null)
             traverseInOrder(sb, root.left);
@@ -115,9 +134,12 @@ class BinarySearchTree{
 
 
 
-    /*
-	post-order traversal
-    */
+    /**
+     * pre-order traversal
+     * prints the value of every node preorder
+     *
+     * @param root node of tree
+     */
     public void postOrderTraversal(Node root){
         StringBuilder values = new StringBuilder();
         traversePostOrder(values, root);
@@ -128,9 +150,14 @@ class BinarySearchTree{
         System.out.print(values.toString());
     }
 
-    /*
-    adds node values to stringbuilder object in postorder
-    */
+
+
+    /**
+     * adds node values to stringbuilder object in postorder
+     *
+     * @param sb to hold node values
+     * @param root current node
+     */
     private void traversePostOrder(StringBuilder sb, Node root) {
         if(root.left != null)
             traversePostOrder(sb, root.left);
@@ -143,10 +170,13 @@ class BinarySearchTree{
 
 
 
-    /*
-    a method to find the node in the tree
-    with a specific value
-    */
+    /**
+     * determines if node is stored in tree
+     *
+     * @param root node of tree
+     * @param key to be searched for
+     * @returns true if node found, otherwise false
+     */
     public boolean find(Node root, int key){
         if(root.value == key)
             return true;
@@ -162,10 +192,12 @@ class BinarySearchTree{
 
 
 
-    /*
-    a method to find the node in the tree
-    with a smallest key
-    */
+    /**
+     * finds minimum value stored in tree
+     *
+     * @param root of tree
+     * @returns minimum value found
+     */
     public int getMin(Node root){
         if(root.left != null)
             getMax(root.right);
@@ -175,10 +207,12 @@ class BinarySearchTree{
 
 
 
-    /*
-    a method to find the node in the tree
-    with a largest key
-    */
+    /**
+     * finds maximum value stored in tree
+     *
+     * @param root of tree
+     * @returns maximum value found
+     */
     public int getMax(Node root){
         if(root.right != null)
             getMax(root.right);
@@ -188,10 +222,13 @@ class BinarySearchTree{
 
 
 
-    /*
-    this method will not compile until getMax
-    is implemented
-    */
+    /**
+     * deletes node with specified value
+     *
+     * @param root of tree
+     * @param key of node to be deleted
+     * @returns minimum value found
+     */
     public Node delete(Node root, int key){
 
         if(root == null){
@@ -227,6 +264,14 @@ class BinarySearchTree{
 
 
 public class TreeDemo{
+
+    /**
+     * main method
+     * initializes BST and adds values
+     * Prints inorder traversal
+     *
+     * @param args array of string arguments
+     */
     public static void main(String[] args){
         BinarySearchTree t1  = new BinarySearchTree();
         t1.insert( 24);
@@ -239,7 +284,5 @@ public class TreeDemo{
         System.out.print("in-order :   ");
         t1.inOrderTraversal(t1.root);
         System.out.println();
-
-
     }
 }
