@@ -104,8 +104,10 @@ class BinarySearchTree{
     with a smallest key
     */
     public int getMin(Node root){
-        //implement in here
+        if(root.left != null)
+            getMax(root.right);
 
+        return root.value;
     }
 
 
