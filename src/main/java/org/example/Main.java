@@ -82,8 +82,13 @@ class BinarySearchTree{
 	   */
 
     public void postOrderTraversal(Node root){
-        //implement in here
+        if(root.left != null)
+            postOrderTraversal(root.left);
 
+        if(root.right != null)
+            postOrderTraversal(root.right);
+
+        System.out.println(root.value + ", ");
     }
 
 
