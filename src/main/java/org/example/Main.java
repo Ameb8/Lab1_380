@@ -68,7 +68,7 @@ class BinarySearchTree{
             postOrderTraversal(root.left);
 
         if(root.right != null)
-            postOrderTraversal(root.right)
+            postOrderTraversal(root.right);
 
     }
 
