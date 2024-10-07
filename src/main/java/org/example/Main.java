@@ -62,7 +62,13 @@ class BinarySearchTree{
     Prints the value of every node preorder
     */
     public void preOrderTraversal(Node root){
-        //implement in here
+        System.out.println(root.value);
+
+        if(root.left != null)
+            postOrderTraversal(root.left);
+
+        if(root.right != null)
+            postOrderTraversal(root.right)
 
     }
 
