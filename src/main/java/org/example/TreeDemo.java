@@ -21,9 +21,8 @@ class BinarySearchTree{
 
     /*
     recursive insert method
-
     */
-	   /*
+        /*
 	   inserts a node into the tree
 	   */
     public void insert(int value){
@@ -72,7 +71,9 @@ class BinarySearchTree{
     }
 
 
-
+    /*
+    adds node values to stringbuilder object in preorder
+    */
     private void traversePreOrder(StringBuilder sb, Node root) {
         sb.append(root.value + ", ");
 
@@ -99,7 +100,9 @@ class BinarySearchTree{
     }
 
 
-
+    /*
+    adds node values to stringbuilder object in inorder
+    */
     private void traverseInOrder(StringBuilder sb, Node root) {
         if(root.left != null)
             traverseInOrder(sb, root.left);
@@ -112,10 +115,9 @@ class BinarySearchTree{
 
 
 
-	   /*
-	   post-order traversal
-	   */
-
+    /*
+	post-order traversal
+    */
     public void postOrderTraversal(Node root){
         StringBuilder values = new StringBuilder();
         traversePostOrder(values, root);
@@ -126,8 +128,9 @@ class BinarySearchTree{
         System.out.print(values.toString());
     }
 
-
-
+    /*
+    adds node values to stringbuilder object in postorder
+    */
     private void traversePostOrder(StringBuilder sb, Node root) {
         if(root.left != null)
             traversePostOrder(sb, root.left);
